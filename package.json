@@ -1,0 +1,27 @@
+{
+  "name": "javascript30",
+  "version": "1.0.0",
+  "description": " 💥💣💥 30 days vanilla JS coding challenge 🎉 ",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simoneas02/javascript30.git"
+  },
+  "keywords": [
+    "JS",
+    "javascript vannila",
+    "javascript 30 days",
+    "js challenge"
+  ],
+  "author": "Simone Amorim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simoneas02/javascript30/issues"
+  },
+  "homepage": "https://github.com/simoneas02/javascript30#readme",
+  "devDependencies": {
+  },
+  "dependencies": {
+    
+  }
+}
