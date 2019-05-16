@@ -1,6 +1,7 @@
 # Javascript 30 Days
 
->  💥💣💥 30 days vanilla JS coding challenge 🎉 
+>  💥💣💥 30 days vanilla JS coding challenge 🎉  
+>  Build 30 things with 30 tutorials. No Frameworks × No Compilers × No Libraries × No Boilerplate
 
 
 ## Contributing
