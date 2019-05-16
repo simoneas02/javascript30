@@ -4,6 +4,8 @@
 >  Build 30 things with 30 tutorials. No Frameworks × No Compilers × No Libraries × No Boilerplate
 
 
+- [1/30 - A JavaScript Drum Kit in Vanilla JS!](https://simoneas02.github.io/javascript30/apps/javaScrip-drum-kit/)
+
 ## Contributing
 
 Find on our [issues](https://github.com/simoneas02/javascript30/issues/) the next steps of the project ;)  
