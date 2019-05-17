@@ -1,101 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- import the webpage's stylesheet -->
-    <!-- =========================================== -->  
-    <link rel="stylesheet" href="./assets/style/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+  <!-- import the webpage's stylesheet -->
+  <!-- =========================================== -->
+  <link rel="stylesheet" href="./assets/style/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
 
-    <link rel="icon" href="./assets/img/favicon.png">
-    
-    <!-- More tags -->
-    <!-- =========================================== -->    
-    <meta name="description" content="A JavaScript Drum Kit in Vanilla JS! #JavaScript30 1/30">
-    <meta name="keywords" content="play, drum, code, JavaScript, Vanilla JS">
-    <meta name="author" content="Simone Amorim">
-    <meta name="theme-color" content="#333333">
+  <link rel="icon" href="./assets/img/favicon.png">
 
-    <!-- Open graph -->
-    <!-- =========================================== -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="JavaScript Drum Kit">
-    <meta property="og:description" content="A JavaScript Drum Kit in Vanilla JS! #JavaScript30 1/30">
-    <meta property="og:url" content="https://simoneas02.github.io/javascript30/apps/javaScrip-drum-kit/">
-    <meta property="og:image" content="./assets/img/sounds-min.png">
+  <!-- More tags -->
+  <!-- =========================================== -->
+  <meta name="description" content="A JavaScript Drum Kit in Vanilla JS! #JavaScript30 1/30">
+  <meta name="keywords" content="play, drum, code, JavaScript, Vanilla JS">
+  <meta name="author" content="Simone Amorim">
+  <meta name="theme-color" content="#333333">
 
-    <!-- Twitter cards -->
-    <!-- =========================================== -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JavaScript Drum Kit">
-    <meta name="twitter:description" content="A JavaScript Drum Kit in Vanilla JS! #JavaScript30 1/30">
-    <meta name="twitter:url" content="https://simoneas02.github.io/javascript30/apps/javaScrip-drum-kit/">
-    <meta name="twitter:image" content="./assets/img/sounds-min.png">
+  <!-- Open graph -->
+  <!-- =========================================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="JavaScript Drum Kit">
+  <meta property="og:description" content="A JavaScript Drum Kit in Vanilla JS! #JavaScript30 1/30">
+  <meta property="og:url" content="https://simoneas02.github.io/javascript30/appsjavaScrip-drum-kit/">
+  <meta property="og:image" content="./assets/img/sounds-min.png">
 
-    <title>JavaScript Drum Kit</title>
+  <!-- Twitter cards -->
+  <!-- =========================================== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JavaScript Drum Kit">
+  <meta name="twitter:description" content="A JavaScript Drum Kit in Vanilla JS! #JavaScript30 1/30">
+  <meta name="twitter:url" content="https://simoneas02.github.io/javascript30/appsjavaScrip-drum-kit/">
+  <meta name="twitter:image" content="./assets/img/sounds-min.png">
+
+  <title>JavaScript Drum Kit</title>
 </head>
 
 <body>
-    <div class="container">
-      <div class="container__item" data-key="65">
-        <kbd class="container__item__title">a</kbd>
-        <span class="container__item__description">clap</span>
-      </div>
-      
-      <div class="container__item" data-key="83">
-        <kbd class="container__item__title">s</kbd>
-        <span class="container__item__description">hihat</span>
-      </div>
-      
-      <div class="container__item" data-key="68">
-        <kbd class="container__item__title">d</kbd>
-        <span class="container__item__description">kick</span>
-      </div>
-      
-      <div class="container__item" data-key="70">
-        <kbd class="container__item__title">f</kbd>
-        <span class="container__item__description">openHat</span>
-      </div>
-      
-      <div class="container__item" data-key="71">
-        <kbd class="container__item__title">g</kbd>
-        <span class="container__item__description">boom</span>
-      </div>
-
-      <div class="container__item" data-key="72">
-        <kbd class="container__item__title">h</kbd>
-        <span class="container__item__description">ride</span>
-      </div>
-      
-      <div class="container__item" data-key="74">
-        <kbd class="container__item__title">j</kbd>
-        <span class="container__item__description">snare</span>
-      </div>
-      
-      <div class="container__item" data-key="75">
-        <kbd class="container__item__title">k</kbd>
-        <span class="container__item__description">tom</span>
-      </div>
-      
-      <div class="container__item" data-key="76">
-        <kbd class="container__item__title">l</kbd>
-        <span class="container__item__description">tink</span>
-      </div>
+  <div class="container">
+    <div class="container__item" data-key="65">
+      <kbd class="container__item__title">a</kbd>
+      <span class="container__item__description">clap</span>
     </div>
 
-    <audio data-key="65" src="./assets/sounds/clap.wav"></audio>
-    <audio data-key="83" src="./assets/sounds/hihat.wav"></audio>
-    <audio data-key="68" src="./assets/sounds/kick.wav"></audio>
-    <audio data-key="70" src="./assets/sounds/openhat.wav"></audio>
-    <audio data-key="71" src="./assets/sounds/boom.wav"></audio>
-    <audio data-key="72" src="./assets/sounds/ride.wav"></audio>
-    <audio data-key="74" src="./assets/sounds/snare.wav"></audio>
-    <audio data-key="75" src="./assets/sounds/tom.wav"></audio>
-    <audio data-key="76" src="./assets/sounds/tink.wav"></audio>
+    <div class="container__item" data-key="83">
+      <kbd class="container__item__title">s</kbd>
+      <span class="container__item__description">hihat</span>
+    </div>
 
-    <script src="./assets/scripts/index.js" defer></script>
+    <div class="container__item" data-key="68">
+      <kbd class="container__item__title">d</kbd>
+      <span class="container__item__description">kick</span>
+    </div>
+
+    <div class="container__item" data-key="70">
+      <kbd class="container__item__title">f</kbd>
+      <span class="container__item__description">openHat</span>
+    </div>
+
+    <div class="container__item" data-key="71">
+      <kbd class="container__item__title">g</kbd>
+      <span class="container__item__description">boom</span>
+    </div>
+
+    <div class="container__item" data-key="72">
+      <kbd class="container__item__title">h</kbd>
+      <span class="container__item__description">ride</span>
+    </div>
+
+    <div class="container__item" data-key="74">
+      <kbd class="container__item__title">j</kbd>
+      <span class="container__item__description">snare</span>
+    </div>
+
+    <div class="container__item" data-key="75">
+      <kbd class="container__item__title">k</kbd>
+      <span class="container__item__description">tom</span>
+    </div>
+
+    <div class="container__item" data-key="76">
+      <kbd class="container__item__title">l</kbd>
+      <span class="container__item__description">tink</span>
+    </div>
+  </div>
+
+  <audio data-key="65" src="./assets/sounds/clap.wav"></audio>
+  <audio data-key="83" src="./assets/sounds/hihat.wav"></audio>
+  <audio data-key="68" src="./assets/sounds/kick.wav"></audio>
+  <audio data-key="70" src="./assets/sounds/openhat.wav"></audio>
+  <audio data-key="71" src="./assets/sounds/boom.wav"></audio>
+  <audio data-key="72" src="./assets/sounds/ride.wav"></audio>
+  <audio data-key="74" src="./assets/sounds/snare.wav"></audio>
+  <audio data-key="75" src="./assets/sounds/tom.wav"></audio>
+  <audio data-key="76" src="./assets/sounds/tink.wav"></audio>
+
+  <script src="./assets/scripts/index.js" defer></script>
 </body>
+
 </html>
