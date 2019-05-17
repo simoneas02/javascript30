@@ -5,7 +5,7 @@
 
 
 - [1/30 - A JavaScript Drum Kit in Vanilla JS!](https://simoneas02.github.io/javascript30/apps/javaScrip-drum-kit/)
-- [2/30 - CSS + JS Clock in Vanilla JS!](https://simoneas02.github.io/javascript30/apps/jCSS-JS-Clock/)
+- [2/30 - CSS + JS Clock in Vanilla JS!](https://simoneas02.github.io/javascript30/apps/CSS-JS-Clock/)
 
 ## Contributing
 
