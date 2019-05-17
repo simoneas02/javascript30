@@ -1,6 +1,14 @@
-const removeTransition = e => {
-	if (e.propertyName !== 'transform') return
+const removeTransition = e =>
+	e.propertyName !== 'transform' ?
+	null :
 	e.target.classList.remove('playing');
+
+const keys = Array.from(document.querySelectorAll('.container__item'));
+keys.map(key => key.addEventListener('transitionend', removeTransition));
+
+const addTransition = e => {
+	const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+	key.classList.add('playing');
 }
 
 const playSound = e => {
@@ -11,11 +19,7 @@ const playSound = e => {
 	audio.currentTime = 0;
 	audio.play();
 
-	const key = document.querySelector(`.container__item[data-key="${e.keyCode}"]`);
-	key.classList.add('playing');
+	addTransition(e);
 }
-
-const keys = document.querySelectorAll('.container__item');
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
 window.addEventListener('keydown', playSound);
