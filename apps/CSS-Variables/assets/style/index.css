@@ -5,11 +5,12 @@
 :root {
 	--base: #ffc600;
 	--spacing: 10px;
-	--blur: 10px;
+	--blur: 0px;
 }
 
 html,
 body {
+	background: #2b4050;
 	height: 100%;
 	margin: 0;
 	width: 100%;
@@ -66,12 +67,12 @@ body {
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	margin: 10px;
+	margin: var(--spacing);
 }
 
 .controls__input {
 	width: 100px;
-	margin-left: 5px;
+	margin-left: calc(var(--spacing) / 2);
 }
 
 .container__img {
