@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  background: #2b4050;
+}
+
+.panels {
+  height: 100%;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+.panel {
+  background: rgb(46, 41, 49);
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: center;
+  transition:
+    font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    background 0.2s;
+  font-size: 20px;
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel1 {
+  background-image: url(https://images.unsplash.com/photo-1557626204-59dd03fd2d31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+}
+
+.panel2 {
+  background-image: url(https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60);
+}
+
+.panel3 {
+  background-image: url(https://images.unsplash.com/photo-1545362436-ca6b21bf4f68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60);
+}
+
+.panel4 {
+  background-image: url(https://images.unsplash.com/photo-1551294444-20efb855d547?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60);
+}
+
+.panel5 {
+  background-image: url(https://images.unsplash.com/photo-1512488151-4d3098ed1107?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60);
+}
+
+.text {
+  margin: 0;
+  width: 100%;
+  transition: transform 0.5s;
+  text-transform: uppercase;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+  font-size: 1em;
+}
+
+@media(min-width: 600px) {
+  .text {
+    font-size: 2em;
+  }
+}
+
+.first_text {
+  transform: translateY(-100%);
+}
+
+.middle_text {
+  font-size: 1.2em;
+}
+
+@media(min-width: 600px) {
+  .middle_text {
+    font-size: 3em;
+  }
+}
+
+.last_text {
+  transform: translateY(100%);
+}
+
+.open {
+  flex: 5;
+  font-size: 40px;
+  padding: 150px 0;
+}
+
+.open-active>*:first-child {
+  transform: translateY(0);
+}
+
+.open-active>*:last-child {
+  transform: translateY(0);
+}
