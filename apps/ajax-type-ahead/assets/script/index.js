@@ -2,9 +2,15 @@ const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb
 
 const cities = [];
 
-fetch(endpoint)
-  .then(blob => blob.json())
-  .then(data => cities.push(...data));
+const fetchCities_ = (url) => {
+  return fetch(url)
+    .then(response => response.json())
+    .then(data => cities.push(...data));
+}
+
+fetchCities_(endpoint);
+
+console.log(cities)
 
 const findMatches = (wordToMatch, cities) => {
   return cities.filter(place => {
@@ -38,3 +44,20 @@ const suggestions = document.querySelector('.list');
 
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
+
+
+const fetchCities = (text) => {
+  this.setState({
+    isLoading: true
+  });
+
+
+  fetch(endpoint)
+    .then(
+      `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${searchTerm}&${PARAM_PAGE}${page}&${PARAM_HPP}${DEFAULT_HPP}`
+    )
+    .then(result => this._isMounted && this.setSearchTopStories(result.data))
+    .catch(error => this._isMounted && this.setState({
+      error
+    }));
+}
