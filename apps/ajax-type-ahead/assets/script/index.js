@@ -1,64 +1,43 @@
-const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+const endpoint =
+  'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 
-const cities = [];
+const places = [];
 
-const fetchCities_ = (url) => {
+const searchInput = document.querySelector('.input');
+const listCities = document.querySelector('.list');
+
+const fetchCities = url => {
   return fetch(url)
     .then(response => response.json())
-    .then(data => cities.push(...data));
-}
+    .then(data => places.push(...data));
+};
 
-const onSearchChange(event) {
-  findMatches(this.value, cities);
-}
+const matchCities = (event, places) =>
+  places.filter(item =>
+    item.city.toLowerCase().match(event.target.value.toLowerCase()),
+  );
 
-const findMatches = (wordToMatch, cities) => {
-  return cities.filter(place => {
-    const regex = new RegExp(wordToMatch, 'gi');
-    return place.city.match(regex) || place.state.match(regex)
-  });
-}
+const matchStates = (event, places) =>
+  places.filter(item =>
+    item.state.toLowerCase().match(event.target.value.toLowerCase()),
+  );
 
-console.log("onSearchChange ", onSearchChange);
-const numberWithCommas = (x) => {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
-
-function displayMatches() {
-  const matchArray = findMatches(this.value, cities);
-  const html = matchArray.map(place => {
-    const regex = new RegExp(this.value, 'gi');
-    const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
-    const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
-    return `
-        <li>
-          <span class="name">${cityName}, ${stateName}</span>
-          <span class="population">${numberWithCommas(place.population)}</span>
-        </li>
-      `;
-  }).join('');
-  suggestions.innerHTML = html;
-}
-
-const searchInput = document.querySelector('.container__input');
-const suggestions = document.querySelector('.list');
-
-searchInput.addEventListener('change', displayMatches);
-searchInput.addEventListener('keyup', displayMatches);
-
-
-const fetchCities = (text) => {
-  this.setState({
-    isLoading: true
-  });
-
-
-  fetch(endpoint)
-    .then(
-      `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${searchTerm}&${PARAM_PAGE}${page}&${PARAM_HPP}${DEFAULT_HPP}`
+const showList = list => {
+  const listElement = list
+    .map(
+      item =>
+      `<p class="list__item">${item.city}, ${item.state}, ${item.population}</p>`,
     )
-    .then(result => this._isMounted && this.setSearchTopStories(result.data))
-    .catch(error => this._isMounted && this.setState({
-      error
-    }));
-}
+    .join('');
+
+  listCities.innerHTML = listElement;
+};
+
+const onSearchChange = (event, places) => {
+  fetchCities(endpoint);
+  const list = [...matchCities(event, places), ...matchStates(event, places)];
+  showList(list);
+};
+
+searchInput.addEventListener('change', e => onSearchChange(e, places));
+searchInput.addEventListener('keyup', e => onSearchChange(e, places));
