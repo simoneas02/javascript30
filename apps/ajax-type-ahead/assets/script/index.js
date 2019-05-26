@@ -8,9 +8,9 @@ const fetchCities_ = (url) => {
     .then(data => cities.push(...data));
 }
 
-fetchCities_(endpoint);
-
-console.log(cities)
+const onSearchChange(event) {
+  findMatches(this.value, cities);
+}
 
 const findMatches = (wordToMatch, cities) => {
   return cities.filter(place => {
@@ -19,6 +19,7 @@ const findMatches = (wordToMatch, cities) => {
   });
 }
 
+console.log("onSearchChange ", onSearchChange);
 const numberWithCommas = (x) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
