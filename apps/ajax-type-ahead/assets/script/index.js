@@ -1,7 +1,7 @@
 const endpoint =
   'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 
-const places = [];
+let places = [];
 
 const searchInput = document.querySelector('.input');
 const listCities = document.querySelector('.list');
@@ -12,30 +12,21 @@ const fetchCities = url => {
     .then(data => places.push(...data));
 };
 
-const matchCities = (event, places) =>
-  places.filter(item =>
-    item.city.toLowerCase().match(event.target.value.toLowerCase()),
-  );
+fetchCities(endpoint);
 
-const matchStates = (event, places) =>
+const matchString = (event, places, text) =>
   places.filter(item =>
-    item.state.toLowerCase().match(event.target.value.toLowerCase()),
+    item[text].toLowerCase().match(event.target.value.toLowerCase()),
   );
 
 const showList = list => {
-  const listElement = list
-    .map(
-      item =>
-      `<p class="list__item">${item.city}, ${item.state}, ${item.population}</p>`,
-    )
-    .join('');
+  const listElement = list.map(item => `<li class="list__item"><p>${item.city}, ${item.state}, ${item.population}</p></li>`).join(' ');
 
   listCities.innerHTML = listElement;
 };
 
 const onSearchChange = (event, places) => {
-  fetchCities(endpoint);
-  const list = [...matchCities(event, places), ...matchStates(event, places)];
+  const list = [...matchString(event, places, 'city'), ...matchString(event, places, 'state')];
   showList(list);
 };
 
