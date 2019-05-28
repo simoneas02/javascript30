@@ -3,8 +3,11 @@ const endpoint =
 
 let places = [];
 
-const searchInput = document.querySelector('.input');
-const listCities = document.querySelector('.list');
+const getEl = el => document.querySelector(el);
+
+const searchInput = getEl('.input');
+const listCities = getEl('.list');
+const container = getEl('.container');
 
 const fetchCities = url => {
   return fetch(url)
@@ -30,5 +33,11 @@ const onSearchChange = (event, places) => {
   showList(list);
 };
 
+const resetInput = el => {
+  el.value = '';
+  showList(places);
+};
+
 searchInput.addEventListener('change', e => onSearchChange(e, places));
 searchInput.addEventListener('keyup', e => onSearchChange(e, places));
+container.addEventListener('click', e => resetInput(searchInput));
