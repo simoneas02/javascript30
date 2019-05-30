@@ -23,7 +23,7 @@ const matchString = (event, places, text) =>
   );
 
 const showList = list => {
-  const listElement = list.map(item => `<li class="list__item"><p>${item.city}, ${item.state}, ${item.population}</p></li>`).join(' ');
+  const listElement = list.map(item => `<li class="list__item"><span>${item.city}, ${item.state},</span> <span class="list__item__population">${item.population}</span></li>`).join(' ');
 
   listCities.innerHTML = listElement;
 };
