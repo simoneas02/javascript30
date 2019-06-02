@@ -12,7 +12,7 @@ const container = getEl('.container');
 const fetchCities = url => {
   return fetch(url)
     .then(response => response.json())
-    .then(data => places.push(...data));
+    .then(data => places = [...places, ...data]);
 };
 
 fetchCities(endpoint);
@@ -22,20 +22,20 @@ const matchString = (event, places, text) =>
     item[text].toLowerCase().match(event.target.value.toLowerCase()),
   );
 
-const showList = list => {
-  const listElement = list.map(item => `<li class="list__item"><span>${item.city}, ${item.state},</span> <span class="list__item__population">${item.population}</span></li>`).join(' ');
+const onSearchChange = (event, places) => {
+  const list = [...matchString(event, places, 'city'), ...matchString(event, places, 'state')];
+  const listElement = list.map(item => {
+    const regex = new RegExp(event.target.value, 'gi');
+    const cityName = item.city.replace(regex, `<span class="list__item_high-light">${event.target.value}</span>`);
+    const stateName = item.state.replace(regex, `<span class="list__item_high-light">${event.target.value}</span>`);
+    return `<li class="list__item"><p>${cityName},${stateName}</p><span class="list__item__population">${item.population}</span></li>`
+  }).join('');
 
   listCities.innerHTML = listElement;
 };
 
-const onSearchChange = (event, places) => {
-  const list = [...matchString(event, places, 'city'), ...matchString(event, places, 'state')];
-  showList(list);
-};
-
 const resetInput = el => {
   el.value = '';
-  showList(places);
 };
 
 searchInput.addEventListener('change', e => onSearchChange(e, places));

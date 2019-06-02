@@ -46,12 +46,14 @@ body {
   border-bottom: 1px solid #D8D8D8;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
   margin: 0;
-  padding: 20px;
+  padding: 5px;
   transition: background 0.2s;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-transform: capitalize;
   color: #2b4050;
+  width: 300px;
 }
 
 .list__item:nth-child(even) {
@@ -66,4 +68,8 @@ body {
 
 .list__item__population {
   font-size: 15px;
+}
+
+.list__item_high-light {
+  background: #ffc600;
 }
