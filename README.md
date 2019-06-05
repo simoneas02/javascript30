@@ -10,6 +10,7 @@
 - [5/30 - Flexbox + JavaScript Image Gallery](https://simoneas02.github.io/javascript30/apps/image-gallery/)
 - [6/30 - Ajax Type Ahead with fetch() - #JavaScript30 6/30](https://simoneas02.github.io/javascript30/apps/ajax-type-ahead/)
 - [7/30 - JavaScript Array Cardio Practice - Day 2 — #JavaScript30 7/30](https://simoneas02.github.io/javascript30/apps/array-cardio-2/)
+- [8/30 - Fun with HTML5 Canvas — #JavaScript30 8/30](https://simoneas02.github.io/javascript30/apps/HTML5-Canvas/)
 
 ## Contributing
 Find on our [issues](https://github.com/simoneas02/javascript30/issues/) the next steps of the project ;)  
