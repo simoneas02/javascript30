@@ -15,6 +15,8 @@ let lastY = 0;
 let hue = 0;
 let direction = true;
 
+const addEvent = (element, event, action) => element.addEventListener(event, action);
+
 canvas.addEventListener('mousedown', () => {
   isDrawing = true;
   [lastX, lastY] = [event.offsetX, event.offsetY];
@@ -44,6 +46,8 @@ const draw = event => {
   direction ? context.lineWidth++ : context.lineWidth;
 };
 
-canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup', () => (isDrawing = false));
-canvas.addEventListener('mouseout', () => (isDrawing = false));
+const notDrawing = () => (isDrawing = false);
+
+addEvent(canvas, 'mousemove', draw);
+addEvent(canvas, 'mouseup', notDrawing);
+addEvent(canvas, 'mouseout', notDrawing);
