@@ -7,26 +7,42 @@ const context = canvas.getContext('2d');
 context.strokeStyle = '#f06';
 context.lineJoin = 'round';
 context.lineCap = 'round';
+context.lineWidth = 100;
 
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
+let hue = 0;
+let direction = true;
+
+canvas.addEventListener('mousedown', () => {
+  isDrawing = true;
+  [lastX, lastY] = [event.offsetX, event.offsetY];
+});
 
 const draw = event => {
   if (!isDrawing) return;
 
-  console.log(event);
+  context.strokeStyle = `hsl(${hue}, 100%, 50%)`;
   context.beginPath();
   context.moveTo(lastX, lastY);
   context.lineTo(event.offsetX, event.offsetY);
   context.stroke();
 
   [lastX, lastY] = [event.offsetX, event.offsetY];
-};
+  hue++;
 
-canvas.addEventListener('mousedown', () => {
-  isDrawing = true;
-});
+  if (hue >= 360) {
+    hue = 0;
+    context.lineWidth = 100;
+  }
+
+  if (context.lineWidth >= 100 || context.lineWidth <= 1) {
+    direction = !direction;
+  }
+
+  direction ? context.lineWidth++ : context.lineWidth;
+};
 
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseup', () => (isDrawing = false));
