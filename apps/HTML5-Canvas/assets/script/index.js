@@ -18,22 +18,35 @@ context.lineWidth = 100;
 
 const addEvent = (element, event, action) => element.addEventListener(event, action);
 
-const draw = event => {
-  if (!isDrawing) return;
+const xLeft = event => event.clientX - rect.left;
+const yTop = event => event.clientY - rect.top;
 
-  context.strokeStyle = `hsl(${hue}, 100%, 50%)`;
-  context.beginPath();
-  context.moveTo(lastX, lastY);
-  context.lineTo(event.offsetX, event.offsetY);
-  context.stroke();
-
-  [lastX, lastY] = [event.offsetX, event.offsetY];
-  hue++;
-
-  if (hue >= 360) {
-    hue = 0;
+const isMousemove = event => {
+  if (isDrawing === true) {
+    drawLine(context, lastX, lastY, xLeft(event), yTop(event));
+    lastX = xLeft(event);
+    lastY = yTop(event);
   }
+};
 
+const isMouseup = event => {
+  if (isDrawing === true) {
+    drawLine(context, lastX, lastY, xLeft(event), yTop(event));
+    lastX = 0;
+    lastY = 0;
+    isDrawing = false;
+  }
+};
+
+const isMousedown = event => {
+  lastX = xLeft(event);
+  lastY = yTop(event);
+  isDrawing = true;
+};
+
+const calculateHue = hue => (hue >= 360 ? (hue = 0) : null);
+
+const lineWidth = context => {
   if (context.lineWidth >= 100 || context.lineWidth <= 1) {
     direction = !direction;
   }
@@ -41,14 +54,20 @@ const draw = event => {
   direction ? context.lineWidth++ : context.lineWidth--;
 };
 
-const notDrawing = () => (isDrawing = false);
+const drawLine = (context, x1, y1, x2, y2) => {
+  context.beginPath();
+  context.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+  context.moveTo(x1, y1);
+  context.lineTo(x2, y2);
+  context.stroke();
+  context.closePath();
 
-const isMouseDown = () => {
-  isDrawing = true;
-  [lastX, lastY] = [event.offsetX, event.offsetY];
+  hue++;
+  calculateHue(hue);
+
+  lineWidth(context);
 };
 
-addEvent(canvas, 'mousemove', draw);
-addEvent(canvas, 'mouseup', notDrawing);
-addEvent(canvas, 'mouseout', notDrawing);
-addEvent(canvas, 'mousedown', isMouseDown);
+addEvent(canvas, 'mousemove', isMousemove);
+addEvent(canvas, 'mousedown', isMousedown);
+addEvent(canvas, 'mouseup', isMouseup);
