@@ -44,7 +44,7 @@ console.dir(p);
 
 // Grouping together
 const show = () =>
-	women.map((woman) => {
+	women.map(woman => {
 		console.groupCollapsed(`${woman.goddess}`);
 		console.log(`This is ${woman.goddess}`);
 		console.log(`${woman.goddess} is a ${woman.work}`);
@@ -72,7 +72,7 @@ console.table(women);
 
 // timing
 console.time('fetching data');
-fetch('https://api.github.com/users/simoneas02').then((data) => data.json()).then((data) => {
+fetch('https://api.github.com/users/simoneas02').then(data => data.json()).then(data => {
 	console.timeEnd('fetching data');
 	console.table(data);
 });
