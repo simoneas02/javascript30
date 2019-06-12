@@ -1,0 +1,15 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+	margin: 0;
+	height: 100%;
+}
+
+.container {
+	padding: 20px;
+	font-family: 'Roboto Condensed', sans-serif;
+}
