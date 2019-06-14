@@ -12,6 +12,7 @@
 - [7/30 - JavaScript Array Cardio Practice - Day 2 — #JavaScript30 7/30](https://simoneas02.github.io/javascript30/apps/array-cardio-2/)
 - [8/30 - Fun with HTML5 Canvas — #JavaScript30 8/30](https://simoneas02.github.io/javascript30/apps/HTML5-Canvas/)
 - [9/30 - 14 Must Know Chrome Dev Tools Tricks - #JavaScript30 9/30](https://simoneas02.github.io/javascript30/apps/chrome-dev-tools/)
+- [10/30 - Hold Shift to Check Multiple Checkboxes - #JavaScript30 10/30](https://simoneas02.github.io/javascript30/apps/check-checkboxess/)
 
 ## Contributing
 Find on our [issues](https://github.com/simoneas02/javascript30/issues/) the next steps of the project ;)
