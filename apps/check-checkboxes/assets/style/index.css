@@ -15,8 +15,19 @@ body {
 	background: #ffffffe6;
 }
 
+.container__group {
+	display: flex;
+	margin-top: 40px;
+}
+
+.container__figure {
+	margin: 0 20px 0 40px;
+}
+
 .container__title {
-	margin: 40px 0 0 50px;
+	margin: 0;
+	color: #5f6368;
+	font-weight: 300;
 }
 
 .list {
