@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- import the webpage's stylesheet -->
+    <!-- =========================================== -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+    <link rel="stylesheet" href="./assets/style/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+
+    <link rel="icon" href="./assets/img/favicon.png">
+
+    <!-- More tags -->
+    <!-- =========================================== -->
+    <meta name="description" content="description">
+    <meta name="keywords" content="code, JavaScript, Vanilla JS">
+    <meta name="author" content="Simone Amorim">
+    <meta name="theme-color" content="#333333">
+
+    <!-- Open graph -->
+    <!-- =========================================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Custom HTML5 Video Player">
+    <meta property="og:description" content="A custom HTML5 video player interface with HTML, CSS and JavaScript.">
+    <meta property="og:url" content="https://simoneas02.github.io/javascript30/apps/HTML5-video-player/">
+    <meta property="og:image" content="./assets/img/img.png">
+
+    <!-- Twitter cards -->
+    <!-- =========================================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Custom HTML5 Video Player">
+    <meta name="twitter:description" content="A custom HTML5 video player interface with HTML, CSS and JavaScript.">
+    <meta name="twitter:url" content="https://simoneas02.github.io/javascript30/apps/HTML5-video-player/">
+    <meta name="twitter:image" content="./assets/img/img.png">
+
+    <title>Custom HTML5 Video Player</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="player">
+        <video class="player__video viewer" src="./assets/img/video.mp4"></video>
+      
+        <div class="player__controls">
+          <div class="progress">
+            <div class="progress__filled"></div>
+          </div>
+          
+          <div>
+            <button class="player__button toggle" title="Play">►</button>
+            <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
+            <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1">
+            <button class="player__button" data-skip="-10">« 10s</button>
+            <button class="player__button" data-skip="25">25s »</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <script src="./assets/script/index.js"></script>
+  </body>
+
+</html>
