@@ -16,7 +16,7 @@
 
     <!-- More tags -->
     <!-- =========================================== -->
-    <meta name="description" content="description">
+    <meta name="description" content="A custom HTML5 video player interface with HTML, CSS and JavaScript.">
     <meta name="keywords" content="code, JavaScript, Vanilla JS">
     <meta name="author" content="Simone Amorim">
     <meta name="theme-color" content="#333333">
@@ -51,14 +51,25 @@
           </div>
           
           <div class="player__buttons">
-            <button class="player__button toggle" title="Play">►</button>
+            <button class="player__button toggle" title="Play">
+              <img src="./assets/icons/play-arrow.svg" alt="Play arrow"/>
+            </button>
+            <div class="player__ranges player__speaker">
+              <img class="" src="./assets/icons/speaker.svg" alt="Speaker"/>
+              <input class="player__range player__input" type="range" name="playbackRate" min="0.5" max="2" step="0.1" value="1">
+            </div>
             <div class="player__ranges">
-              <input class="player__range" type="range" name="volume" min="0" max="1" step="0.05" value="1">
+              <button class="player__button" data-skip="-10">
+                <img src="./assets/icons/rewind.svg" alt="Rewind" /> 
+                <span class="player__ranges__playback-rate">10s</span> 
+              </button>
               <input class="player__range" type="range" name="playbackRate" min="0.5" max="2" step="0.1" value="1">
+              <button class="player__button" data-skip="25">
+                <span class="player__ranges__playback-rate">25s</span>
+                <img src="./assets/icons/fast-forward.svg" alt="Fast forward" />
+              </button>
             </div>
             <div>
-              <button class="player__button" data-skip="-10">« 10s</button>
-              <button class="player__button" data-skip="25">25s »</button>
             </div>
           </div>
         </div>

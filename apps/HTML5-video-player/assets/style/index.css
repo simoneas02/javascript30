@@ -83,12 +83,13 @@ body {
 	cursor: pointer;
 	max-width: 50px;
 	margin: 5px;
+	display: flex;
+	align-items: center;
 }
 
 .player__ranges {
 	display: flex;
 	max-width: 550px;
-	width: 100%;
 }
 
 .player__range {
@@ -145,4 +146,22 @@ body {
 	cursor: pointer;
 	height: 15px;
 	width: 15px;
+}
+
+.player__input {
+	opacity: 0;
+}
+
+.player__speaker {
+	cursor: pointer;
+	margin: 5px;
+}
+
+.player__speaker:hover .player__input {
+	opacity: 1;
+	transition: opacity .1s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.player__ranges__playback-rate {
+	margin: 5px;
 }
