@@ -57,17 +57,15 @@
             </button>
             <div class="player__ranges player__speaker">
               <img class="" src="./assets/icons/speaker.svg" alt="Speaker"/>
-              <input class="player__range player__input" type="range" name="playbackRate" min="0.5" max="2" step="0.1" value="1">
+              <input class="player__range player__input" type="range" name="volume" min="0.5" max="2" step="0.1" value="1">
             </div>
             <div class="player__ranges">
               <button class="player__button" data-skip="-10">
-                <img src="./assets/icons/rewind.svg" alt="Rewind" /> 
-                <span class="player__ranges__playback-rate">10s</span> 
+                <img src="./assets/icons/rewind.svg" alt="Rewind" data-skip="-10"/>
               </button>
-              <input class="player__range" type="range" name="playbackRate" min="0.5" max="2" step="0.1" value="1">
-              <button class="player__button" data-skip="25">
-                <span class="player__ranges__playback-rate">25s</span>
-                <img src="./assets/icons/fast-forward.svg" alt="Fast forward" />
+              <input class="player__range playback__rate" type="range" name="playbackRate" min="0" max="100" step="10" value="1">
+              <button class="player__button" data-skip="10">
+                <img src="./assets/icons/fast-forward.svg" alt="Fast forward" data-skip="10" />
               </button>
             </div>
             <div>
