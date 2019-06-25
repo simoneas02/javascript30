@@ -21,6 +21,8 @@ const skip = event => {
 	playbackRate.max = video.duration;
 };
 
+const seekBar = () => (video.currentTime = video.duration * (playbackRate.value / 100));
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('click', updateButton);
 video.addEventListener('play', updateButton);
@@ -29,3 +31,5 @@ video.addEventListener('pause', updateButton);
 toggle.addEventListener('click', togglePlay);
 
 skipButtons.map(button => button.addEventListener('click', skip));
+
+playbackRate.addEventListener('change', seekBar);
