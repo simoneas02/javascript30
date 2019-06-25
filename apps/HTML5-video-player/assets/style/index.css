@@ -165,3 +165,12 @@ body {
 .player__ranges__playback-rate {
 	margin: 5px;
 }
+
+.hide-button {
+	opacity: 0;
+	transition: opacity .1s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.pause {
+	margin-left: -20px;
+}
