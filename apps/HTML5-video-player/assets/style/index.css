@@ -51,20 +51,20 @@ body {
 .progress {
 	display: flex;
 	align-items: center;
-	padding: 5px;
 	width: 100%;
 	position: relative;
-	height: 5px;
-	background: rgba(0, 0, 0, 0.5);
+	height: 10px;
 	cursor: ew-resize;
 	margin: 5px 0;
+	transition: height 0.3s;
+	background: rgba(0, 0, 0, 0.5);
 }
 
-.progress__filled {
-	width: 50%;
+.progress__bar {
+	width: 0%;
 	background: #ffc600;
 	position: absolute;
-	height: 5px;
+	height: 10px;
 }
 
 .player__buttons {
