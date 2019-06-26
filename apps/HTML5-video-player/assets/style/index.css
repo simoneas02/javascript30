@@ -32,11 +32,6 @@ body {
 	position: relative;
 }
 
-.player:fullscreen {
-	max-width: none;
-	width: 100%;
-}
-
 .player__video {
 	width: 100%;
 }
