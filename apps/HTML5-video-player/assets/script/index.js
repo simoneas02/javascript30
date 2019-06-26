@@ -6,6 +6,7 @@ const iconPause = toggle.querySelector('.pause');
 const skipButtons = [...player.querySelectorAll('[data-skip]')];
 const playbackRate = player.querySelector('.playback__rate');
 const volumeBar = player.querySelector('.volume__bar');
+const progress = player.querySelector('.progress');
 const progressBar = player.querySelector('.progress__bar');
 
 const togglePlay = () => (video.paused ? video.play() : video.pause());
@@ -32,6 +33,11 @@ const handleProgress = () => {
 	progressBar.style.width = `${percent}%`;
 };
 
+const scrub = event => {
+	const scrubTime = event.offsetX / progress.offsetWidth * video.duration;
+	video.currentTime = scrubTime;
+};
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('click', updateButton);
 video.addEventListener('play', updateButton);
@@ -39,8 +45,8 @@ video.addEventListener('pause', updateButton);
 video.addEventListener('timeupdate', handleProgress);
 
 toggle.addEventListener('click', togglePlay);
-
 skipButtons.map(button => button.addEventListener('click', skip));
-
 playbackRate.addEventListener('change', seekBar);
 volumeBar.addEventListener('change', changeVolumeBar);
+
+progress.addEventListener('click', scrub);

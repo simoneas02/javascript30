@@ -54,7 +54,7 @@ body {
 	width: 100%;
 	position: relative;
 	height: 10px;
-	cursor: ew-resize;
+	cursor: pointer;
 	margin: 5px 0;
 	transition: height 0.3s;
 	background: rgba(0, 0, 0, 0.5);
