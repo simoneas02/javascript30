@@ -5,6 +5,7 @@ const iconPlay = toggle.querySelector('.play');
 const iconPause = toggle.querySelector('.pause');
 const skipButtons = [...player.querySelectorAll('[data-skip]')];
 const playbackRate = player.querySelector('.playback__rate');
+const volumeBar = player.querySelector('.volume__bar');
 
 const togglePlay = () => (video.paused ? video.play() : video.pause());
 
@@ -23,6 +24,8 @@ const skip = event => {
 
 const seekBar = () => (video.currentTime = video.duration * (playbackRate.value / 100));
 
+const changeVolumeBar = () => (video.volume = volumeBar.value);
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('click', updateButton);
 video.addEventListener('play', updateButton);
@@ -33,3 +36,4 @@ toggle.addEventListener('click', togglePlay);
 skipButtons.map(button => button.addEventListener('click', skip));
 
 playbackRate.addEventListener('change', seekBar);
+volumeBar.addEventListener('change', changeVolumeBar);

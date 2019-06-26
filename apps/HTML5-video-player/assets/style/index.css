@@ -148,7 +148,7 @@ body {
 	width: 15px;
 }
 
-.player__input {
+.volume__bar {
 	opacity: 0;
 }
 
@@ -157,7 +157,7 @@ body {
 	margin: 5px;
 }
 
-.player__speaker:hover .player__input {
+.player__speaker:hover .volume__bar {
 	opacity: 1;
 	transition: opacity .1s cubic-bezier(0.0, 0.0, 0.2, 1);
 }
