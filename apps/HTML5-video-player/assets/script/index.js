@@ -8,6 +8,7 @@ const playbackRate = player.querySelector('.playback__rate');
 const volumeBar = player.querySelector('.volume__bar');
 const progress = player.querySelector('.progress');
 const progressBar = player.querySelector('.progress__bar');
+const playerFullscreen = player.querySelector('.player__fullscreen');
 
 const togglePlay = () => (video.paused ? video.play() : video.pause());
 
@@ -38,6 +39,20 @@ const scrub = event => {
 	video.currentTime = scrubTime;
 };
 
+const toggleFullScreen = () => {
+	if (video.requestFullscreen) {
+		video.requestFullscreen();
+	}
+
+	if (video.mozRequestFullScreen) {
+		video.mozRequestFullScreen();
+	}
+
+	if (video.webkitRequestFullscreen) {
+		video.webkitRequestFullscreen();
+	}
+};
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('click', updateButton);
 video.addEventListener('play', updateButton);
@@ -48,5 +63,5 @@ toggle.addEventListener('click', togglePlay);
 skipButtons.map(button => button.addEventListener('click', skip));
 playbackRate.addEventListener('change', seekBar);
 volumeBar.addEventListener('change', changeVolumeBar);
-
 progress.addEventListener('click', scrub);
+playerFullscreen.addEventListener('click', toggleFullScreen);
