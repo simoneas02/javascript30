@@ -15,6 +15,7 @@
 - [10/30 - Hold Shift to Check Multiple Checkboxes - #JavaScript30 10/30](https://simoneas02.github.io/javascript30/apps/check-checkboxes/)
 - [11/30 - Custom HTML5 Video Player - #JavaScript30 11/30](https://simoneas02.github.io/javascript30/apps/HTML5-video-player/)
 - [12/30 - Key Sequence Detection (KONAMI CODE) - #JavaScript30 12/30](https://simoneas02.github.io/javascript30/apps/konami-code/)
+- [13/30 - Slide In on Scroll - #JavaScript30 13/30](https://simoneas02.github.io/javascript30/apps/slide-in-on-scroll/)
 
 
 ## Contributing
