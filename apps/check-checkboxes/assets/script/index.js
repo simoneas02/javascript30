@@ -4,19 +4,22 @@ let lastChecked;
 const inBetween = (between, checkbox) => (between ? (checkbox.checked = true) : null);
 const changeBetween = (check, between) => (check ? (between = !between) : between);
 
-function handleCheck(event) {
-	let between = false;
-	const isChecked = event.shiftKey && this.checked;
+const checked = (isChecked, input, between) => {
+  isChecked &&
+    inputs.forEach(checkbox => {
+      const check = checkbox === input || checkbox === lastChecked;
+      between = changeBetween(check, between);
+      inBetween(between, checkbox);
+    });
+  return between;
+};
 
-	if (isChecked) {
-		inputs.forEach(checkbox => {
-			const check = checkbox === this || checkbox === lastChecked;
-			between = changeBetween(check, between);
-			inBetween(between, checkbox);
-		});
-	}
+const handleCheck = event => {
+  let between = false;
+  const input = event.target;
+  const isChecked = event.shiftKey && input.checked;
+  between = checked(isChecked, input, between);
+  lastChecked = input;
+};
 
-	lastChecked = this;
-}
-
-inputs.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+inputs.forEach(checkbox => checkbox.addEventListener('click', handleCheck, true));
