@@ -20,3 +20,9 @@ body {
   padding: 10px 30px;
   margin: 0 auto;
 }
+
+.slide-in {
+  object-fit: cover;
+  margin: 10px 30px;
+  width: 100%;
+}
