@@ -5,24 +5,72 @@
 html,
 body {
   width: 100%;
+  background-color: rgb(22, 21, 21);
   margin: 0;
-  height: 100%;
 }
 
 .container {
-  max-width: 700px;
+  max-width: 1200px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: 'Roboto Condensed', sans-serif;
-  padding: 10px 30px;
   margin: 0 auto;
+  padding: 20px 40px;
+  color: rgb(243, 236, 236);
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+.container__title {
+  font-size: 7.25em;
+  color: #f4c0d7;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.container__subtitle {
+  border-bottom: 2px solid white;
+  font-size: 1.25em;
+  width: 100%;
+  font-weight: 300;
+  line-height: 1.25em;
+  color: #f4c0d7;
+  padding: 10px 0 20px;
+  margin: 0;
+}
+
+.container__subtitle__link {
+  color: #f4c0d7;
+  font-weight: 900;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.container__block {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.container__section {
+  width: 40%;
 }
 
 .slide-in {
   object-fit: cover;
-  margin: 10px 30px;
-  width: 100%;
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+.align-left {
+  margin-right: 20px;
+}
+
+.align-right {
+  margin-left: 20px;
 }
