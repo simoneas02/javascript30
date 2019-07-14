@@ -17,6 +17,7 @@
 - [12/30 - Key Sequence Detection (KONAMI CODE) - #JavaScript30 12/30](https://simoneas02.github.io/javascript30/apps/konami-code/)
 - [13/30 - Slide In on Scroll - #JavaScript30 13/30](https://simoneas02.github.io/javascript30/apps/slide-in-on-scroll/)
 - [14/30 - Object and Arrays - Reference VS Copy - #JavaScript30 14/30.](https://simoneas02.github.io/javascript30/apps/reference-vs-copyl/)
+- [15/30 - LocalStorage and Event Delegation - #JavaScript30 15/30.](https://simoneas02.github.io/javascript30/apps/localStorage-and-event-delegation/)
 
 
 ## Contributing
