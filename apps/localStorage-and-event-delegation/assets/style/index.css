@@ -58,14 +58,37 @@ body {
 
 .list__item {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 10px 0;
+  padding: 10px 10px 10px 0;
   font-weight: 100;
   display: flex;
   color: #160f11;
   font-size: 1.1em;
 }
 
+.list__item__checkbox {
+  margin-right: 10px;
+  padding: 9px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
 .form {
   margin: 20px 0;
   align-self: flex-start;
+}
+
+.form__input {
+  background: #f7f7f7;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: 100;
+  transition: 0.3s;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 5px;
+}
+
+.form__submite {
+  text-transform: uppercase;
+  color: #9c9c9c;
+  padding: 10px;
 }

@@ -66,7 +66,14 @@
         <h1 class="content__title">Fancy foods</h1>
 
         <ul class="list">
-          <li class="list__item">Loading...</li>
+          <li class="list__item">
+            <input class="list__item__checkbox " type="checkbox" />
+            <label for="item">Beef Bourguignon</label>
+          </li>
+          <li class="list__item">
+            <input class="list__item__checkbox " type="checkbox" />
+            <label for="item">Salad Nicoise</label>
+          </li>
         </ul>
 
         <form class="form">
@@ -74,10 +81,10 @@
             class="form__input"
             type="text"
             name="item"
-            placeholder="What do you need to study today?"
+            placeholder="Type some food?"
             required
           />
-          <input class="form__submite" type="submit" value="Add" />
+          <input class="form__input form__submite" type="submit" value="Add" />
         </form>
       </div>
     </div>
