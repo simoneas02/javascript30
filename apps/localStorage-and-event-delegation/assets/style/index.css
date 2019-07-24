@@ -74,12 +74,13 @@ body {
 
 .form {
   margin: 20px 0;
+  display: flex;
   align-self: flex-start;
 }
 
 .form__input {
   background: #f7f7f7;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
   font-size: 0.8em;
   font-weight: 100;
   transition: 0.3s;
@@ -89,6 +90,9 @@ body {
 
 .form__submite {
   text-transform: uppercase;
+  background: #f7f7f7;
   color: #9c9c9c;
+  font-size: 0.8em;
   padding: 10px;
+  border-radius: 0 5px 5px 0;
 }
