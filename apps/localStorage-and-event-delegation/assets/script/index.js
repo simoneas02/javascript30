@@ -1,21 +1,32 @@
-const form = document.querySelector('.form');
-let list = document.querySelector('.list');
-const input = document.querySelector('.form__input');
-let items = [];
+const addItems = document.querySelector('.form');
+const itemsList = document.querySelector('.list');
 
-const addItems = e => {
+const addItem = e => {
   e.preventDefault();
-  let input = document.querySelector('.form__input');
-  items = [...items, input.value];
+  const text = getInputValue();
+  const element = createElement(text);
 
-  createElement(items);
+  itemsList.insertAdjacentHTML('beforeend', element);
 
-  input.value = '';
+  e.target.reset();
 };
 
-const createElement = items =>
-  items.map(
-    (value, index) => `<li><label for="item${index}">${value}</label></li>`
-  );
+const getInputValue = () => {
+  const text = document.querySelector('.form__input').value;
+  const item = {
+    text,
+    done: false
+  };
+  return item;
+};
 
-addEventListener('submit', addItems);
+const createElement = item => `
+        <li class="list__item">
+          <input class="list__item__checkbox" name="item" type="checkbox" ${
+            item.done ? 'checked' : ''
+          } />
+          <label for="item">${item.text}</label>
+        </li>
+      `;
+
+addItems.addEventListener('submit', addItem);
