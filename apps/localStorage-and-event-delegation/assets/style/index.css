@@ -72,6 +72,11 @@ body {
   display: inline-block;
 }
 
+.list__item__checkbox:checked + .list__item__label {
+  color: #9c1f33;
+  font-weight: 500;
+}
+
 .form {
   margin: 20px 0;
   display: flex;
@@ -90,9 +95,10 @@ body {
 
 .form__submite {
   text-transform: uppercase;
-  background: #f7f7f7;
-  color: #9c9c9c;
+  background: #9c1f33;
+  color: #f7f7f7;
   font-size: 0.8em;
   padding: 10px;
   border-radius: 0 5px 5px 0;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
 }

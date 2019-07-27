@@ -25,7 +25,7 @@ const createElement = item => `
           <input class="list__item__checkbox" name="item" type="checkbox" ${
             item.done ? 'checked' : ''
           } />
-          <label for="item">${item.text}</label>
+          <label class="list__item__label" for="item">${item.text}</label>
         </li>
       `;
 
