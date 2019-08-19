@@ -19,6 +19,7 @@
 - [14/30 - Object and Arrays - Reference VS Copy - #JavaScript30 14/30.](https://simoneas02.github.io/javascript30/apps/reference-vs-copyl/)
 - [15/30 - LocalStorage and Event Delegation - #JavaScript30 15/30.](https://simoneas02.github.io/javascript30/apps/localStorage-and-event-delegation/)
 - [16/30 - CSS Text Shadow on Mouse Move Effect #JavaScript30 16/30.](https://simoneas02.github.io/javascript30/apps/mouse-move-shadow/)
+- [17/30 - JavaScript Practice: Sorting Band Names without articles - #JavaScript30 17/30](https://simoneas02.github.io/javascript30/apps/mouse-move-shadow/)
 
 
 ## Contributing
